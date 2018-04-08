@@ -1,0 +1,33 @@
+<form action="">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <span>欢迎注册</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-input-container class="full-width">
+        <input matInput type="text" placeholder="您的登录邮箱：">
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <input matInput type="text" placeholder="您的账户昵称：">
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <input matInput type="text" placeholder="您的登录密码：">
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <input matInput type="password" placeholder="确认登录密码：">
+      </mat-input-container>
+      <mat-grid-list cols="6">
+        <mat-grid-tile *ngFor="let item of items">
+          <mat-icon class="avatar" [svgIcon]="item"></mat-icon>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <button mat-raised-button type="button" color='primary'>注册</button>
+    </mat-card-content>
+    <mat-card-actions class="text-right">
+      <p>已有账户？<a routerLink="/login">登录</a></p>
+      <p>忘记密码？<a href="javascript:void(0)">找回</a></p>
+    </mat-card-actions>
+  </mat-card>
+</form>
