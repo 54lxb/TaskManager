@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatSidenavModule, MatButtonModule, MatToolbarModule,MatCheckboxModule,
   MatIconModule, MatCardModule,MatInputModule, MatListModule,MatRadioModule,
   MatSlideToggleModule, MatGridListModule, MatAutocompleteModule, MatMenuModule,
-  MatSelectModule, MatTooltipModule, MatDatepickerModule } from "@angular/material";
+  MatSelectModule, MatTooltipModule, MatDatepickerModule,MatNativeDateModule } from "@angular/material";
 
 @NgModule({
   declarations: [],
@@ -25,7 +25,8 @@ import { MatSidenavModule, MatButtonModule, MatToolbarModule,MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
     MatTooltipModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports:[
     CommonModule,
@@ -45,7 +46,8 @@ import { MatSidenavModule, MatButtonModule, MatToolbarModule,MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
     MatTooltipModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule { }
