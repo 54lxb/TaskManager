@@ -19,7 +19,9 @@ $app-night-warn: mat-palette($mat-deep-orange);
 $app-night-theme: mat-light-theme($app-night-primary, $app-night-accent, $app-night-warn);
 
 // 使主题生效
-@include angular-material-theme($app-day-theme);
+.app-day-theme {
+    @include angular-material-theme($app-day-theme);
+}
 
 .app-night-theme {
     @include angular-material-theme($app-night-theme);
