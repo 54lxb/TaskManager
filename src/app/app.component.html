@@ -1,4 +1,4 @@
-<mat-sidenav-container [class.app-night-theme]="darkTheme">
+<mat-sidenav-container [class]="darkTheme?'app-night-theme':'app-day-theme'">
   <mat-sidenav #sidenav>
     <app-sidebar></app-sidebar>
   </mat-sidenav>

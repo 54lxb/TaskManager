@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from '../shared/shared.module';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectItemComponent } from './project-item/project-item.component';
@@ -16,8 +15,7 @@ import { ProjectRoutingModule } from "./project-routing.module";
   ],
   imports: [
     SharedModule,
-    ProjectRoutingModule,
-    MatDialogModule
+    ProjectRoutingModule
   ],
   exports:[
     ProjectListComponent

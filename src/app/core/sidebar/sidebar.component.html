@@ -1,24 +1,41 @@
 <mat-nav-list>
+
+  <h3 mat-subheader>用户</h3>
+  <mat-list-item [routerLink]="['/login']">
+    <mat-icon mat-list-icon>person</mat-icon>
+    <span mat-line>登录注册</span>
+    <span mat-line mat-subheader>用户登录注册</span>
+  </mat-list-item>
+
   <h3 mat-subheader>项目</h3>
-  <mat-list-item>
+  <mat-list-item [routerLink]="['/projects']">
     <mat-icon mat-list-icon svgIcon="projects"></mat-icon>
-      <span mat-line>项目首页</span>
+    <span mat-line>项目首页</span>
     <span mat-line mat-subheader>查看您的所有项目</span>
   </mat-list-item>
+
+  <h3 mat-subheader>任务</h3>
+  <mat-list-item [routerLink]="['/tasks']">
+    <mat-icon mat-list-icon>view_list</mat-icon>
+    <span mat-line>任务列表</span>
+    <span mat-line mat-subheader>查看您的所有任务</span>
+  </mat-list-item>
+
   <h3 mat-subheader>日历</h3>
   <mat-list-item>
-      <mat-icon mat-list-icon svgIcon="month"></mat-icon>
-      <span mat-line>月视图</span>
-      <span mat-line mat-subheader>按月查看您的任务</span>
-    </mat-list-item>
+    <mat-icon mat-list-icon svgIcon="month"></mat-icon>
+    <span mat-line>月视图</span>
+    <span mat-line mat-subheader>按月查看您的任务</span>
+  </mat-list-item>
   <mat-list-item>
-      <mat-icon mat-list-icon svgIcon="week"></mat-icon>
+    <mat-icon mat-list-icon svgIcon="week"></mat-icon>
     <span mat-line>周视图</span>
     <span mat-line mat-subheader>按周查看您的任务</span>
-    </mat-list-item>
+  </mat-list-item>
   <mat-list-item>
     <mat-icon mat-list-icon [svgIcon]="today"></mat-icon>
     <span mat-line>日视图</span>
     <span mat-line mat-subheader>按天查看您的任务</span>
   </mat-list-item>
+  
 </mat-nav-list>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from "@angular/material";
+import { MAT_DIALOG_DATA, MatDialogRef  } from "@angular/material";
 
 @Component({
   selector: 'app-new-task',
@@ -16,11 +16,18 @@ export class NewTaskComponent implements OnInit {
     {label:"普通",value:3}
   ]
 
-  constructor(@Inject(MAT_DIALOG_DATA) private data) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) private data, 
+    private dialogRef: MatDialogRef<NewTaskComponent>
+  ) { }
 
   ngOnInit() { 
     this.title = this.data.title;
     console.log(JSON.stringify(this.data.task));
+  }
+
+  saveTask() {
+    this.dialogRef.close("I had reviced your message！");
   }
 
 }
