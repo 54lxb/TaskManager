@@ -1,8 +1,23 @@
-import { trigger, state, transition, style, animate, keyframes } from "@angular/animations";
+import { trigger, state, transition, style, animate, keyframes, group } from "@angular/animations";
 
 export const slideToRight = trigger('routerAnima', [
-    state('in', style({'border-left-width' : '0.5em'})),
-    state('out', style({'border-left-width' : '1.0em'})),
-    transition('hover => out', animate('100ms ease-in')),
-    transition('out => hover', animate('100ms ease-out'))
+    state('void', style({'position':'fixed', 'width':'100%', 'height':'80%'})),
+    state('*', style({'position':'fixed', 'width':'100%', 'height':'80%'})),
+    transition('void => *', [
+        style({transform: 'translateX(-100%)', opacity: 0}), 
+        group([
+            animate('0.5s ease-in-out', style({transform:'translateX(0)'})),
+            animate('0.3s ease-in', style({opacity: 1}))
+        ])
+    ]),
+    transition('* => void', [
+        style({transform: 'translateX(0)'}), 
+        group([
+            animate('0.5s ease-in-out', style({transform:'translateX(100%)'})),
+            animate('0.3s ease-in', style({opacity: 0}))
+        ])
+    ])
 ])
+
+// 【void => *】 可替换为 【:enter】
+// 【* => void】 可替换为 【:leave】

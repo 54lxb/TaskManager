@@ -1,8 +1,14 @@
-import { trigger, state, transition, style, animate, keyframes } from "@angular/animations";
+import { trigger, stagger, state, transition, style, animate, keyframes, group, query } from "@angular/animations";
 
 export const listAnima = trigger('listAnima', [
-    state('in', style({'border-left-width' : '0.5em'})),
-    state('out', style({'border-left-width' : '1.0em'})),
-    transition('hover => out', animate('100ms ease-in')),
-    transition('out => hover', animate('100ms ease-out'))
+    transition('* => *', [
+        query(':enter', style({opacity: 0})),
+        query(':enter', stagger(100, [
+            animate('1s', style({opacity:1}))
+        ])),
+        query(':leave', style({opacity: 1})),
+        query(':leave', stagger(100, [
+            animate('1s', style({opacity:0}))
+        ]))
+    ])
 ])
